@@ -1,0 +1,85 @@
+#userdata-display{
+    margin-left: 37%;
+}
+
+table{
+    /* background-color: lightblue; */
+    width: 40%;
+    margin-top: 3%;
+}
+
+th, td {
+    border-bottom: 1px solid white;
+    /* border-color: black;
+    border-radius: none;
+    border-style: solid; */
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: darkorchid;
+    color: white;
+  }
+
+.signup-form{
+    display: flex;
+    /* background-color: lightblue; */
+
+}
+
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 18%, rgba(154,171,223,1) 79%, rgba(117,170,232,1) 100%);
+    background-attachment:fixed ;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#form{
+    display: grid;
+    padding: 20px;
+    margin-left: 37%;
+    /* margin-right: 50%; */
+    background-color: white;
+    /* color: darkorange; */
+
+    width: 300px;
+    margin: 5vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 30px;
+    
+}
+
+input,textarea,select{
+    border-style: solid;
+     border-radius: 5px;
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px;
+    border-color: aqua;
+}
+
+h1{
+    text-align: center;
+    color:  #792099;
+    font-size: 25px;
+}
+
+h2{
+    margin-left: 80px;
+    color:  #792099;
+    font-size: 25px;
+}
+#form button{
+    background-color:  #792099;
+    color: white;
+    border: 1px solid #792099;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}

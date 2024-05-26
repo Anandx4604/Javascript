@@ -1,0 +1,225 @@
+<html>
+
+<head>
+    <title>Form</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-form">
+
+            <form onsubmit="return ButtonClick(event)" method="post" id="form">
+                <h1 style="text-align: center;">Signup Form</h1>
+                <p>
+                    <Label>First Name:</Label><br>
+                    <input onkeypress="firstNameValid()" type="text" name="fName" id="fName" placeholder="Enter First Name" required>
+                    <label name="LabelError" id="error-label1" style="visibility: hidden; color: red;">Invalid</label>
+                </p>
+
+                <p>
+                    <Label>Last Name:</Label><br>
+                    <input onkeypress="lastNameValid()" type="text" name="lName" id="lName" placeholder="Enter Last Name" required>
+                    <label name="LabelError" id="error-label2" style="visibility: hidden;">Invalid</label>
+
+                </p>
+
+                <p>
+                    <Label>Email:</Label><br>
+                    <input onkeypress="emailValid()" type="email" name="email" id="email" placeholder="Enter your email" required>
+                    <label name="LabelError" id="error-label3" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label for="PASSWORD">Password</label><br>
+                    <input onkeypress= "passwordValid()" type="password" name="Password" id="password" placeholder="Enter Pasword" required>
+                    <label for="" id="error-label4" style="visibility: hidden;">Invalid</label>           
+                </p>
+
+                <p>
+                    <Label>Phone Number:</Label><br>
+                    <input onkeypress="phoneValid()" type="number" name="phone" id="phone" value="phone" placeholder="Enter Number" required>
+                    <label name="LabelError" id="error-label5" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <Label>Gender</Label><br>
+                    <select name="" id="gender" required>
+                        <option>Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="enclose">Dont wish to enclose</option>
+                    </select>
+                    <label name="LabelError" id="error-label6" style="visibility: hidden;">Invalid</label>
+                </p>         
+                
+                <p>
+                    <label>Present Address:</label><br>
+                    <textarea onkeypress="presentAddValid()" name="present-add" id="present-addr" value="present-add" cols="30" rows="10" required></textarea>
+                    <label name="LabelError" id="error-label7" style="visibility: hidden;">Invalid</label>
+                </p>
+                <p>
+                    <Label>Present Address Pincode:</Label><br>
+                    <input onkeypress="presentPinValid()" type="number" name="pres-pin" id="pres-pin"value="pincode" placeholder="Enter your Pincode" required>
+                    <label name="LabelError" id="error-label8" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label>Permanent Address:</label><input type="checkbox" onclick="CopyAddress()" id="same-add">Same as present address<br>
+                    <textarea onkeypress="permAddValid()" name="present-add" id="perm-addr" cols="30" rows="10" required></textarea>
+                        <label name="LabelError" id="error-label9" style="visibility: hidden;">Invalid</label>
+                </p>
+                <p>
+                    <Label>Permanent Address Pincode:</Label><br>
+                    <input onkeypress="permPinValid()" type="number" name="pincode" id="perm-pin" value="pincode" placeholder="Enter your Pincode">
+                        <label name="LabelError" id="error-label10" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label for="pan">PAN number:</label><br>
+                    <input onkeypress="panValid()" type="text" name="pan" id="pan" placeholder="pan" required>
+                    <label name="LabelError" id="error-label11" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label for="dob">Date of Birth</label><br>
+                    <input type="date" name="dob" id="dob">
+                    <label name="LabelError" id="error-label12" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label for="time">Time</label><br>
+                    <input type="time" name="time" id="time">
+                    <label name="LabelError" id="error-label13" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label for="language">Languages</label><br>
+                    <input type="checkbox" name="language[]" id="language" value="Tamil">Tamil <br>
+                    <input type="checkbox" name="language[]" id="language" value="English">English <br>
+                    <input type="checkbox" name="language[]" id="language" value="French">French
+                    <label name="LabelError" id="error-label14" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p><label for="interest">Field of interest</label><br>
+                    <select name="interest" id="interests" multiple="3">
+                        <option value="">Select Option</option>
+                        <option value="Music">Music</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="badmiton">badmiton</option>
+                        <option value="Cricket">Cricket</option>
+                        <option value="Football">Football</option>
+                        <option value="VollyBall">VollyBall</option>
+                        <label name="LabelError" id="error-label15" style="visibility: hidden;">Invalid</label>
+                    </select>
+
+                </p>
+                <p><label for="amount">Balance:</label><br>
+                    <input onkeypress="validAmount()" type="text" name="amount" id="amount" placeholder="Enter amount">
+                    <label name="LabelError" id="error-label16" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <label>Upload your Picture</label><br>
+                    <input onkeypress="photoValid()" type="file" name="file" id="photo">
+                    <label name="LabelError" id="photo-check" style="visibility: hidden;">Invalid</label>
+                </p>
+
+                <p>
+                    <button type="submit" id="submit-btn">Submit</button>
+                    <!-- <button type="reset">Reset</button> -->
+                </p>
+            </form>
+
+        </div>
+
+        <div id="userdata-display" border="2" style="display: none;">
+            <h2>Registered Details</h2>
+
+            <table id="userTable">
+                <tr>
+                    <th>SELECTION</th>
+                    <TH colspan="3"> USER DETAILS</TH>
+                </tr>
+                <tr>
+                    <TD>First Name</TD>
+                    <TD colspan="3"><span id="result-fname"></span></TD>
+                </tr>
+                <TR>
+                    <TD>Last Name</TD>
+                    <TD colspan="3"><span id="result-lname"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Email</TD>
+                    <TD colspan="3"><span id="result-email"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Phone</TD>
+                    <TD colspan="3"><span id="result-phone"></span> </TD>
+
+                </TR>
+                <TR>
+                    <TD>Password</TD>
+                    <TD colspan="3"><span id="result-password"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Gender</TD>
+                    <TD colspan="3"><span id="result-gender"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Present Address</TD>
+                    <TD colspan="3"><span id="result-Preaddress"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Pin code</TD>
+                    <TD colspan="3"><span id="result-Prepin"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Permanent Address</TD>
+                    <TD colspan="3"><span id="result-Permaddress"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Pin code</TD>
+                    <TD colspan="3"><span id="result-Permpin"></span></TD>
+                </TR>
+                <TR>
+                    <TD>PAN number</TD>
+                    <TD colspan="3"><span id="result-pan"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Date of Birth</TD>
+                    <TD colspan="3"><span id="result-dob"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Time</TD>
+                    <TD colspan="3"><span id="result-time"></span></TD>
+                </TR>
+                <TR>
+                    <TD>Languages</TD>
+                    <TD><span id="result-lang"></span></TD>
+                    <td colspan="2"> <span id="result-lang"></span></td>
+                </TR>
+                <TR>
+                    <TD>Interests</TD>
+                    <TD><span id="result-field"></span></TD>
+                    <td><span id="result-field"></span></td>
+                    <td><span id="result-field"></span></td>
+                </TR>
+                <TR>
+                    <TD>Balance</TD>
+                    <TD colspan="3"><span id="result-balance"></span></TD>
+                </TR>
+
+                <TR>
+                    <TD>Image</TD>
+                    <TD><span id="result-pic"></span></TD>
+                </TR>
+
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

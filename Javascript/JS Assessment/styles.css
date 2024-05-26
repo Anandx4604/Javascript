@@ -1,0 +1,67 @@
+.menus {
+    display: flex;
+    background-color: orangered;
+    color: white;
+    font-size: x-large;
+    border-width: 5%;
+    border-color: black;
+    border-style: solid;
+}
+
+.menus p{
+    margin-left: 3%;
+}
+h1{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bolder;
+
+}
+table{
+    background-color: lightblue;
+    width: 40%;
+    margin-top: 3%;
+}
+.header{
+    border-width: 10%;
+    border-color: black;
+    border-style: solid;
+    width: 100%;
+    margin-left :0;
+    /* position: relative; */
+}
+
+.footer{
+    background-color: darkblue;
+    color: white;
+    width: 100%;
+    /* margin-bottom: 10%; */
+    margin-left: 0;
+    padding-left: 0.5%;
+    border-width: 5%;
+    border-color: black;
+    border-style: solid;
+    /* position: fixed; */
+}
+
+#submit-btn a {
+    text-decoration: none;
+}
+
+form{
+    display: grid;
+    padding: 20px;
+    margin-left: 37%;
+    /* margin-right: 50%; */
+    background-color: lightblue;
+    /* color: darkorange; */
+
+    width: 300px;
+    margin: 5vh auto 0 auto;
+    border-radius: 15px;
+    padding: 30px;
+    
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="user.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menus">
+            <p>
+                Library Portal
+            </p>
+            <p>
+                <a href="index.html">Home</a>
+            </p>
+            <p>
+                <a href="user.html">User</a>
+            </p>
+            <p>
+                <a href="books.html">Books</a>
+            </p>
+        </div>
+    </div>
+    <div class="userForm">
+
+        <form onsubmit="return ButtonClick(event)" method="post" id="form">
+            <h1>SIGN UP FORM</h1>
+            <p>
+                <Label>First Name:</Label><br>
+                <input onkeypress="firstNameValid()" type="text" name="fName" id="fName"
+                    placeholder="Enter your First Name" required>
+                <label name="LabelError" id="error-label1" style="visibility: hidden; color: red;">Invalid</label>
+            </p>
+
+            <p>
+                <Label>Last Name:</Label><br>
+                <input onkeypress="lastNameValid()" type="text" name="lName" id="lName"
+                    placeholder="Enter your Last Name" required>
+                <label name="LabelError" id="error-label2" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <Label>Email:</Label><br>
+                <input onkeypress="emailValid()" type="email" name="email" id="email" placeholder="Enter your email"required>
+                <label name="LabelError" id="error-label3" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <Label>Phone Number:</Label><br>
+                <input onkeypress="phoneValid()" type="number" name="phone" id="phone" value="phone"
+                    placeholder="Enter your Phone Number"required>
+                <label name="LabelError" id="error-label4" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <label>Present Address:</label><br>
+                <textarea onkeypress="presentAddValid()" name="present-add" id="present-addr" value="present-add"
+                    cols="30" rows="10" required></textarea>
+                <label name="LabelError" id="error-label5" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+            <p>
+                <Label>Present Address Pincode:</Label><br>
+                <input onkeypress="presentPinValid()" type="number" name="pres-pin" id="pres-pin" value="pincode"
+                    placeholder="Enter your Pincode" required>
+                <label name="LabelError" id="error-label6" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <label>Permanent Address:</label><input type="checkbox" onclick="CopyAddress()" id="same-add">Same as
+                present address<br>
+                <textarea onkeypress="permAddValid()" name="present-add" id="perm-addr" cols="30" rows="10" required></textarea>
+                <label name="LabelError" id="error-label7" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+            <p>
+                <Label>Permanent Address Pincode:</Label><br>
+                <input onkeypress="permPinValid()" type="number" name="pincode" id="perm-pin" value="pincode"
+                    placeholder="Enter your Pincode" required>
+                <label name="LabelError" id="error-label8" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <Label>Gender</Label><br>
+                <select name="" id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="enclose">Dont wish to enclose</option>
+
+                </select>
+            </p>
+            <p>
+                <label>
+                    Department
+                </label><br>
+                <select name="" id="dept" required>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MCA">MCA</option>
+                    <option value="EEE">EEE</option>
+                </select>
+            </p>
+            <p>
+                <label>Upload your Picture</label><br>
+                <input onkeypress="photoValid()" type="file" name="file" id="photo" required>
+                <label name="LabelError" id="photo-check" style="visibility: hidden; color: red;">Invalid</label>
+
+            </p>
+
+            <p>
+                <button type="submit" id="submit-btn">Submit</button>
+                <button type="reset">Reset</button>
+            </p>
+
+        </form>
+    </div>
+
+    <div id="userdata-display" style="display: none;">
+        <table id="usertable" border="2" align="center" cellpadding="30" cellspacing="0">
+            <tr>
+                <td colspan="4">
+                    <h1>User Details</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td colspan="2"><span id="fnames"></span></td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td colspan="2"><span id="lnames"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td colspan="2"><span id="emails"></span></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td colspan="2"><span id="phones"></span></td>
+            </tr>
+            <tr>
+                <td>Present Address</td>
+                <td colspan="2"> <span id="pre-adds"></span></td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td colspan="2"><span id="pre-pins"></span></td>
+            </tr>
+            <tr>
+                <td>Permanent Address</td>
+                <td colspan="2"><span id="per-adds"></span></td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td colspan="2"><span id="per-pins"></span></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td colspan="2"><span id="genders"></span></td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td colspan="2"><span id="depts"></span></td>
+            </tr>
+            <tr>
+                <td>Uploaded Picture</td>
+                <td colspan="2"><span id="pics"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>&copy Copyright @ 2024 Present Syncfusion </p>
+    </div>
+
+</body>
+
+</html>

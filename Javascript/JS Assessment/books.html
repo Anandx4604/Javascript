@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="books.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menus">
+            <p>
+                Library Portal
+            </p>
+            <p>
+                <a href="index.html">Home</a>
+            </p>
+            <p>
+                <a href="user.html">User</a>
+            </p>
+            <p>
+                <a href="books.html">Books</a>
+            </p>
+        </div>
+    </div>
+    <div class="book-form">      
+     
+        <form onsubmit="return ButtonClick(event)" method="post" id="book-form">
+            <h1>Book Form</h1>
+                        <p>
+                            <Label>Book Name:</Label><br>
+                            <input onkeypress="bookNameValid()" type="text" name="bookName" id="bookName"
+                                placeholder="Enter the Book Name">
+                            <label name="LabelError" id="error-label1"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>Department</label><br>
+                            <select name="" id="dept">
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Science">Science</option>
+                                <option value="History">History</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label>Rack Number:</label><br>
+                            <input onkeypress="RackValid()" type="text" name="rackno" id="rackno"
+                                placeholder="Enter Rack Number">
+                            <label name="LabelError" id="error-label2"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+                        <p>
+                            <label>Author Name:</label><br>
+                            <input onkeypress="authorNameValid()" type="text" name="authorName" id="authorName"
+                                placeholder="Enter Author Name">
+                            <label name="LabelError" id="error-label3"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>Publish Year</label><br>
+                            <input onkeypress=" PublishYearValid()" type="number" name="pubYear" id="pubYear"
+                                placeholder="Enter Published year">
+                            <label name="LabelError" id="error-label4"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+                        <p>
+                            <label>Publisher Name:</label><br>
+                            <input onkeypress="PublisherNameValid()" type="text" name="pubName" id="pubName"
+                                placeholder="Enter the Publisher Name">
+                            <label name="LabelError" id="error-label5"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+                        <p>
+                            <label>Author email:</label><br>
+                            <input onkeypress="AuthorEmailValid()" type="email" name="author-mail" id="author-mail"
+                                placeholder="Enter Author Email">
+                            <label name="LabelError" id="error-label6"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>Author Phone:</label><br>
+                            <input onkeypress="AuthorPhoneValid()" type="number" name="author-phone" id="author-phone"
+                                placeholder="Enter Author Phone">
+                            <label name="LabelError" id="error-label7"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>Author Address:</label><br>
+                            <textarea onkeypress="AuthorAddValid()" name="author-add" id="author-addr" cols="30"
+                                rows="10" placeholder="Enter address"></textarea>
+                            <label name="LabelError" id="error-label8"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>Author Address Pincode:</label><br>
+                            <input onkeypress=" AuthorPinValid()" type="number" name="author-pin" id="author-pin"
+                                placeholder="Enter Pincode">
+                            <label name="LabelError" id="error-label9"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+
+                        <p>
+                            <label>ISPN Number:</label><br>
+                            <input onkeypress="ISPNValid()" type="text" name="ispnNo" id="ispnNo"
+                                placeholder="Enter ISPN number">
+                            <label name="LabelError" id="error-label10"
+                                style="visibility: hidden; color: red;">Invalid</label>
+
+                        </p>
+                        <p>
+                            <label>Upload Book Photo</label><br>
+                            <input type="file" name="book-photo" id="book-photo">
+                        </p>
+                        <p>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </p>
+                    </form>
+
+    </div>
+    <div id="bookdata-display" style="display: none;" >
+        <table border="2" align="center" cellpadding="30" cellspacing="0">
+            <tr>
+                <td colspan="4">
+                    <h1>Book Details</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>Book Name</td>
+                <td><span id="bookName"></span></td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td><span id="depts"></span></td>
+            </tr>
+            <tr>
+                <td>Rack No</td>
+                <td><span id="rack"></span></td>
+            </tr>
+            <tr>
+                <td>Author Name</td>
+                <td><span id="aName"></span></td>
+            </tr>
+            <tr>
+                <td>Publish Year</td>
+                <td><span id="pYear"></span></td>
+            </tr>
+            <tr>
+                <td>Publisher Name</td>
+                <td><span id="pName"></span></td>
+            </tr>
+            <tr>
+                <td>Author Email</td>
+                <td><span id="aEmail"></span></td>
+            </tr>
+            <tr>
+                <td>Author Phone</td>
+                <td><span id="aPhone"></span></td>
+            </tr>
+            <tr>
+                <td>Author Address</td>
+                <td><span id="aAddress"></span></td>
+            </tr>
+            <tr>
+                <td>Author Pincode</td>
+                <td><span id="aPin"></span></td>
+            </tr>
+            <tr>
+                <td>ISPN Number</td>
+                <td><span id="ISPNno"></span></td>
+            </tr>
+            <tr>
+                <td>Book Photo</td>
+                <td><span id="bookPhoto"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <p>&copy Copyright @ 2024 Present Syncfusion </p>
+    </div>
+</body>
+
+</html>
